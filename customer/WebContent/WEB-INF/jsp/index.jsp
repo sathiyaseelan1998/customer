@@ -6,7 +6,7 @@
 <title>customer</title>
 </head>
 <body>
-	<h1>CUSTOMER APPLICATION</h1>
+	<h1>CUSTOMER APPLICATIONS</h1>
 	
 	<a href="register">Register</a>
 </body>
