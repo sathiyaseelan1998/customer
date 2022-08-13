@@ -11,6 +11,7 @@ h1{
 
 background-color: lime;
 text-align: center;
+padding: 20px;
 
 
 }
