@@ -4,6 +4,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>customer</title>
+
+<style type="text/css">
+
+h1{
+
+background-color: lime;
+text-align: center;
+
+
+}
+a{
+text-decoration: none;
+}
+a:hover{
+color: red;
+}
+
+</style>
+
 </head>
 <body>
 	<h1>CUSTOMER APPLICATIONS</h1>
