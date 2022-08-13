@@ -16,8 +16,8 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public int customerRegister(CustomerBo customerBo) {
 		// TODO Auto-generated method stub
-		CustomerVo customerVo=new CustomerVo();
-		int count=customerDao.customerRegister(customerVo);
+	//	CustomerVo customerVo=new CustomerVo();
+		//int count=customerDao.customerRegister(customerVo);
 		return 0;
 	}
 
