@@ -15,11 +15,22 @@ form label{
 display: block;
 
 }
+.cForm{
+
+width: 500px;
+margin: 250px auto;
+padding:20px;
+background-color: rgba(0,0,0,.5);
+
+
+
+}
 
 </style>
 </head>
 <body>
 <h1>CUSTOMER REGISTRATION</h1>
+<div class="cForm">
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
 <label>NAME</label><form:input path="name"/>
 <label>EMAIL</label><form:input path="email"/>
@@ -28,6 +39,7 @@ display: block;
 <label>MOBILE</label><form:input path="mobile"/>
 <form:button value="register">Save</form:button>
 </form:form>
+</div>
 
 <span>${msg}</span>
 </body>
