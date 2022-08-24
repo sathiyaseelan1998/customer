@@ -3,7 +3,7 @@ package com.customer.bo;
 public class CustomerBo {
 
 	private int id;
-	private int name;
+	private String name;
 	private String email;
 	private String password;
 	private String address;
@@ -15,10 +15,10 @@ public class CustomerBo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getEmail() {

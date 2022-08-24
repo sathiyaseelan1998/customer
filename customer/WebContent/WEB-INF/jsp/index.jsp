@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>customer</title>
 
-<style type="text/css">
+<!-- <style type="text/css">
 
 h1{
 
@@ -22,7 +22,7 @@ a:hover{
 color: red;
 }
 
-</style>
+</style> -->
 
 </head>
 <body>
