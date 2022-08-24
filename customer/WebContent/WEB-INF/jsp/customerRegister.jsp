@@ -8,15 +8,27 @@
 
 
 <title>Insert title here</title>
+<style type="text/css">
+
+form label{
+
+display: block;
+
+}
+
+</style>
 </head>
 <body>
+<h1>CUSTOMER REGISTRATION</h1>
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
-<form:input path="name"/>
-<form:input path="email"/>
-<form:input path="password"/>
-<form:input path="address"/>
-<form:input path="mobile"/>
-<form:button>Save</form:button>
+<label>NAME</label><form:input path="name"/>
+<label>EMAIL</label><form:input path="email"/>
+<label>PASSWORD</label><form:input path="password"/>
+<label>ADDRESS</label><form:input path="address"/>
+<label>MOBILE</label><form:input path="mobile"/>
+<form:button value="register">Save</form:button>
 </form:form>
+
+<span>${msg}</span>
 </body>
 </html>
