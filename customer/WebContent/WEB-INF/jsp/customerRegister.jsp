@@ -5,11 +5,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
-
+<link rel="stylesheet" href="../css/mystyle.css" type="text/css"/>
 
 <title>Insert title here</title>
 </head>
 <body>
+<div class="myform">
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
 <form:input path="name"/>
 <form:input path="email"/>
@@ -18,5 +19,6 @@
 <form:input path="mobile"/>
 <form:button>Save</form:button>
 </form:form>
+</div>
 </body>
 </html>
