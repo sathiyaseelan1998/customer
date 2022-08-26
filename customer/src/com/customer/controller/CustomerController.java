@@ -15,19 +15,26 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
-	CustomerBo customerBo=new CustomerBo();
+	//CustomerBo customerBo=new CustomerBo();
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model)
 	{
-		model.addAttribute("customerBo", customerBo);
+		model.addAttribute("customerBo",new CustomerBo());
 		return "customerRegister";
 	}
 	
+	@RequestMapping(value = "customerRegister",method = RequestMethod.POST)
 	public String customerRegister(@ModelAttribute("customerBo") CustomerBo customerBo,Model model )
 	{
 		
 		int count=customerService.customerRegister(customerBo);
+		if(count>0) {
+			model.addAttribute("msg", "customer details save successfully");
+		}
+		else {
+			model.addAttribute("msg", "customer details save not successfully");
+		}
 		return "customerRegister";
 		
 	}

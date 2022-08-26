@@ -8,17 +8,40 @@
 <link rel="stylesheet" href="../css/mystyle.css" type="text/css"/>
 
 <title>Insert title here</title>
+<style type="text/css">
+
+form label{
+
+display: block;
+
+}
+.cForm{
+
+width: 500px;
+margin: 250px auto;
+padding:20px;
+background-color: rgba(0,0,0,.5);
+
+
+
+}
+
+</style>
 </head>
 <body>
-<div class="myform">
+
+<h1>CUSTOMER REGISTRATION</h1>
+<div class="cForm">
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
-<form:input path="name"/>
-<form:input path="email"/>
-<form:input path="password"/>
-<form:input path="address"/>
-<form:input path="mobile"/>
-<form:button>Save</form:button>
+<label>NAME</label><form:input path="name"/>
+<label>EMAIL</label><form:input path="email"/>
+<label>PASSWORD</label><form:input path="password"/>
+<label>ADDRESS</label><form:input path="address"/>
+<label>MOBILE</label><form:input path="mobile"/>
+<form:button value="register">Save</form:button>
 </form:form>
 </div>
+
+<span>${msg}</span>
 </body>
 </html>
