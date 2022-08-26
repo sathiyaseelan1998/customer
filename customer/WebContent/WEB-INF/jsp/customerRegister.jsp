@@ -35,7 +35,7 @@ background-color: rgba(0,0,0,.5);
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
 <label>NAME</label><form:input path="name"/>
 <label>EMAIL</label><form:input path="email"/>
-<label>PASSWORD</label><form:input path="password"/>
+<label>PASSWORD</label><form:password path="password"/>
 <label>ADDRESS</label><form:input path="address"/>
 <label>MOBILE</label><form:input path="mobile"/>
 <form:button value="register">Save</form:button>
