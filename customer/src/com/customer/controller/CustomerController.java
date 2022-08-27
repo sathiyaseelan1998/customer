@@ -1,5 +1,8 @@
 package com.customer.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,8 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	//CustomerBo customerBo=new CustomerBo();
+	
+	List<CustomerBo> list=new ArrayList<CustomerBo>();
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model)
@@ -36,6 +41,23 @@ public class CustomerController {
 			model.addAttribute("msg", "customer details save not successfully");
 		}
 		return "customerRegister";
+		
+	}
+	
+	@RequestMapping(value="customerView",method=RequestMethod.GET)
+	public String customerView(Model model) {
+		
+		
+		
+		list=customerService.customerView();
+		if(null!=list) {
+			
+			model.addAttribute("list", list);
+		}
+		
+		
+		return "customerView";
+		
 		
 	}
 }

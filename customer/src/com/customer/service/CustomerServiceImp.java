@@ -1,5 +1,8 @@
 package com.customer.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +31,14 @@ public class CustomerServiceImp implements CustomerService {
 		
 		int count=customerDao.customerRegister(customerVo);
 		return count;
+	}
+
+	@Override
+	public List<CustomerBo> customerView() {
+		// TODO Auto-generated method stub
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
+		list=customerDao.customerView();
+		return null;
 	}
 
 }
