@@ -1,7 +1,9 @@
 package com.customer.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,12 +38,19 @@ public class CustomerDaoImp implements CustomerDao {
 	public List<CustomerVo> customerView() {
 		// TODO Auto-generated method stub
 		
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
+		
 		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			list=cr.list();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e);
 		}
-		return null;
+		return list;
 	}
 
 }
