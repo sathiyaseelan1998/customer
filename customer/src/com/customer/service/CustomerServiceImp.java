@@ -36,9 +36,20 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public List<CustomerBo> customerView() {
 		// TODO Auto-generated method stub
-		List<CustomerVo> list=new ArrayList<CustomerVo>();
-		list=customerDao.customerView();
-		return null;
+		List<CustomerBo> listBo=new ArrayList<CustomerBo>();
+		List<CustomerVo> listVo=new ArrayList<CustomerVo>();
+		listVo=customerDao.customerView();
+		
+		for(CustomerVo vo:listVo) {
+			CustomerBo bo=new CustomerBo();
+			bo.setId(vo.getId());
+			bo.setName(vo.getName());
+			bo.setEmail(vo.getEmail());
+			bo.setPassword(vo.getPassword());
+			bo.setMobile(vo.getMobile());
+			listBo.add(bo);
+		}
+		return listBo;
 	}
 
 }
