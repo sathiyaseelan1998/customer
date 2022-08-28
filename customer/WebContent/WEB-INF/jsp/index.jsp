@@ -29,5 +29,7 @@ color: red;
 	<h1>CUSTOMER APPLICATIONS</h1>
 	
 	<a href="register">Register</a>
+		<a href="customerView">View</a>
+	
 </body>
 </html>
