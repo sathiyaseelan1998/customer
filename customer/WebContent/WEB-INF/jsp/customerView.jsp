@@ -27,6 +27,7 @@ table{
 
 width: 100%;
 
+
 }
 
 tr:nth-child(even){
@@ -54,6 +55,9 @@ tr:hover {
 <th>PASSWORD</th>
 <th>MOBILE</th>
 <th>ADDRESS</th>
+<th>EDIT</th>
+<th>DELETE</th>
+
 
 </tr>
 
@@ -65,6 +69,9 @@ tr:hover {
 <td>${l.password}</td>
 <td>${l.address}</td>
 <td>${l.mobile}</td>
+<td><a href="edit?id=${l.id}"><i class="fa fa-edit" style="font-size:24px;"></i></a></td>
+<td><a href="delete?id=${l.id}"><i class="fa fa-trash-o" style="font-size:24px ;color:red;"></i></a></td>
+			
 </tr>
 
 
