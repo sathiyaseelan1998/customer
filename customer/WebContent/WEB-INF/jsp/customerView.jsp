@@ -7,6 +7,40 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <title>Insert title here</title>
+<style type="text/css">
+
+
+th{
+background-color: navy;
+color: white;
+text-align: left;
+}
+table ,th ,td{
+
+border: 1px solid;
+border-collapse: collapse;
+padding:7px;
+
+
+}
+table{
+
+width: 100%;
+
+}
+
+tr:nth-child(even){
+background-color: lightgray;
+
+
+}
+tr:hover {
+	background-color: gray;
+	color: white;
+}
+
+
+</style>
 </head>
 <body>
 
