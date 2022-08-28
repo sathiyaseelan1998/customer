@@ -46,6 +46,7 @@ public class CustomerServiceImp implements CustomerService {
 			bo.setName(vo.getName());
 			bo.setEmail(vo.getEmail());
 			bo.setPassword(vo.getPassword());
+			bo.setAddress(vo.getAddress());
 			bo.setMobile(vo.getMobile());
 			listBo.add(bo);
 		}
