@@ -44,7 +44,7 @@ public class CustomerController {
 		
 	}
 	
-	@RequestMapping(value="customerView",method=RequestMethod.GET)
+	@RequestMapping(value="/customerView",method=RequestMethod.GET)
 	public String customerView(Model model) {
 		
 		
