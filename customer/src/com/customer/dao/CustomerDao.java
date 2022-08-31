@@ -10,4 +10,6 @@ public interface CustomerDao {
 
 	List<CustomerVo> customerView();
 
+	CustomerVo edit(int id);
+
 }

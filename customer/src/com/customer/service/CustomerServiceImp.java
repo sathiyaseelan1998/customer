@@ -18,6 +18,9 @@ public class CustomerServiceImp implements CustomerService {
 	@Autowired
 	CustomerDao customerDao;
 	
+	
+	CustomerVo customerVo=new CustomerVo();
+	
 	@Override
 	public int customerRegister(CustomerBo customerBo) {
 		// TODO Auto-generated method stub
@@ -51,6 +54,14 @@ public class CustomerServiceImp implements CustomerService {
 			listBo.add(bo);
 		}
 		return listBo;
+	}
+
+	@Override
+	public CustomerBo edit(int id) {
+		// TODO Auto-generated method stub
+		
+		customerVo=customerDao.edit(id);
+		return null;
 	}
 
 }

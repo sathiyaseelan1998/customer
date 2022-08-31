@@ -10,4 +10,6 @@ public interface CustomerService {
 
 	List<CustomerBo> customerView();
 
+	CustomerBo edit(int id);
+
 }

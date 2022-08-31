@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.customer.bo.CustomerBo;
 import com.customer.service.CustomerService;
@@ -18,9 +19,10 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
-	//CustomerBo customerBo=new CustomerBo();
+	
 	
 	List<CustomerBo> list=new ArrayList<CustomerBo>();
+	CustomerBo customerBo=new CustomerBo();
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model)
@@ -59,5 +61,13 @@ public class CustomerController {
 		return "customerView";
 		
 		
+	}
+	@RequestMapping(value = "/edit",method = RequestMethod.GET)
+	public String edit(@RequestParam("id")int id,Model model) {
+		
+		customerBo=customerService.edit(id);
+		
+		return null;
+	
 	}
 }
