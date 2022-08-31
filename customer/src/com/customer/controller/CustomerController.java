@@ -66,8 +66,9 @@ public class CustomerController {
 	public String edit(@RequestParam("id")int id,Model model) {
 		
 		customerBo=customerService.edit(id);
+		model.addAttribute("customerBo", customerBo);
 		
-		return null;
+		return "customerEdit";
 	
 	}
 }
