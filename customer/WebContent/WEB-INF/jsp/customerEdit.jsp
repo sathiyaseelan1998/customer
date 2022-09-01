@@ -32,7 +32,7 @@ background-color: rgba(0,0,0,.5);
 
 <h1>CUSTOMER UPDATE</h1>
 <div class="cForm">
-<form:form action="customerRegister" modelAttribute="customerBo" method="post" >
+<form:form action="customerEdit" modelAttribute="customerBo" method="post" >
 <form:hidden path="id"/>
 <label>NAME</label><form:input path="name"/>
 <label>EMAIL</label><form:input path="email"/>

@@ -12,4 +12,6 @@ public interface CustomerService {
 
 	CustomerBo edit(int id);
 
+	int customerEdit(CustomerBo customerBo);
+
 }

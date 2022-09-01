@@ -20,7 +20,7 @@ public class CustomerServiceImp implements CustomerService {
 	
 	
 	CustomerVo customerVo=new CustomerVo();
-	
+	CustomerBo customerBo=new CustomerBo();
 	@Override
 	public int customerRegister(CustomerBo customerBo) {
 		// TODO Auto-generated method stub
@@ -61,7 +61,29 @@ public class CustomerServiceImp implements CustomerService {
 		// TODO Auto-generated method stub
 		
 		customerVo=customerDao.edit(id);
-		return null;
+		customerBo.setId(customerVo.getId());
+		customerBo.setName(customerVo.getName());
+		customerBo.setEmail(customerVo.getEmail());
+		customerBo.setPassword(customerVo.getPassword());
+		customerBo.setAddress(customerVo.getAddress());
+		customerBo.setMobile(customerVo.getMobile());
+		
+		return customerBo;
+	}
+
+	@Override
+	public int customerEdit(CustomerBo customerBo) {
+		// TODO Auto-generated method stub
+		customerVo.setId(customerBo.getId());
+		customerVo.setName(customerBo.getName());
+		customerVo.setEmail(customerBo.getEmail());
+		customerVo.setPassword(customerBo.getPassword());
+		customerVo.setAddress(customerBo.getAddress());
+		customerVo.setMobile(customerBo.getMobile());
+		
+		int id=customerDao.customerEdit(customerVo);
+		
+		return id;
 	}
 
 }

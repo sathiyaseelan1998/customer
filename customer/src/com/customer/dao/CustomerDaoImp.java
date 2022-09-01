@@ -74,4 +74,25 @@ public class CustomerDaoImp implements CustomerDao {
 		return customerVo;
 	}
 
+	@Override
+	public int customerEdit(CustomerVo customerVo) {
+		// TODO Auto-generated method stub
+		
+		int id=0;
+		try {
+			
+			Session session=sf.getCurrentSession();
+			session.update(customerVo);
+			if(null!=customerVo) {
+				
+				id=customerVo.getId();
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return id;
+	}
+
 }

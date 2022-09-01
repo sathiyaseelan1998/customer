@@ -12,4 +12,6 @@ public interface CustomerDao {
 
 	CustomerVo edit(int id);
 
+	int customerEdit(CustomerVo customerVo);
+
 }

@@ -74,8 +74,8 @@ text-transform: capitalize;
 <td>${l.password}</td>
 <td class="cap">${l.address}</td>
 <td>${l.mobile}</td>
-<td><a href="edit?id=${l.id}"><i class="fa fa-edit" style="font-size:24px;"></i></a></td>
-<td><a href="delete?id=${l.id}"><i class="fa fa-trash-o" style="font-size:24px ;color:red;"></i></a></td>
+<td><a href="edit?id=${l.id}"><i class="fa fa-edit" style="font-size:24px;">EDIT</i></a></td>
+<td><a href="delete?id=${l.id}"><i class="fa fa-trash-o" style="font-size:24px ;color:red;">DELETE</i></a></td>
 			
 </tr>
 

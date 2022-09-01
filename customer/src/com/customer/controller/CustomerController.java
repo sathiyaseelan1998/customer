@@ -71,4 +71,19 @@ public class CustomerController {
 		return "customerEdit";
 	
 	}
+	@RequestMapping(value = "/customerEdit",method=RequestMethod.POST)
+	public String customerEdit(@ModelAttribute("customerBo")CustomerBo customerBo,Model model) {
+		
+		int id=customerService.customerEdit(customerBo);
+		if(id>0) {
+			
+			return "redirect:/customerView";
+		}
+		else {
+			return "customerEdit";
+			
+		}
+
+		
+	}
 }
