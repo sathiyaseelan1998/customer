@@ -12,36 +12,49 @@
 
 form label{
 
-display: block;
-margin-bottom: 5px;
+display:block ;
+margin: 5px;
 
 
 }
 form input{
 
 font-size: 20px;
-font-weight: normal;
+font-weight: lighter;
 border-radius: 5px;
-margin-bottom: 5px;
+width: 200px;
+
+}
+form button{
+display: block;
+margin: 10px;
+padding: 7px;
+width: 100px;
 
 }
 .cForm{
 
-width: 500px;
+width: 300px;
 margin: 250px auto;
 padding:20px;
-background-color: rgba(0,15,26,.5);
+background-color: rgba(20,15,26,.5);
 
 
 
+}
+
+.cForm h3{
+
+text-align: center;
 }
 
 </style>
 </head>
 <body>
 
-<h1>CUSTOMER REGISTRATION</h1>
 <div class="cForm">
+<h3>CUSTOMER REGISTRATION</h3>
+
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
 <label>NAME</label><form:input path="name"/>
 <label>EMAIL</label><form:input path="email"/>
