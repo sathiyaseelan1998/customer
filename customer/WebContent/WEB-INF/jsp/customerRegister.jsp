@@ -13,6 +13,16 @@
 form label{
 
 display: block;
+margin-bottom: 5px;
+
+
+}
+form input{
+
+font-size: 20px;
+font-weight: normal;
+border-radius: 5px;
+margin-bottom: 5px;
 
 }
 .cForm{
@@ -20,7 +30,7 @@ display: block;
 width: 500px;
 margin: 250px auto;
 padding:20px;
-background-color: rgba(0,0,0,.5);
+background-color: rgba(0,15,26,.5);
 
 
 
