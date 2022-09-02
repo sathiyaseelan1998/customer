@@ -82,8 +82,15 @@ public class CustomerController {
 		else {
 			return "customerEdit";
 			
-		}
-
+		}	
+	}
+	
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public String customerDelete(@RequestParam("id")int id,Model model) {
 		
+		int custId=customerService.customerDelete(id);
+		
+			return "redirect:/customerView";
+	
 	}
 }

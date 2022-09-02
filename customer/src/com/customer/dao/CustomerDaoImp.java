@@ -95,4 +95,22 @@ public class CustomerDaoImp implements CustomerDao {
 		return id;
 	}
 
+	@Override
+	public int customerDelete(int id) {
+		// TODO Auto-generated method stub
+		int custId=0;
+		customerVo.setId(id);
+		try {
+			
+			Session session=sf.getCurrentSession();
+			session.delete(customerVo);
+			custId=customerVo.getId();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return custId;
+	}
+
 }

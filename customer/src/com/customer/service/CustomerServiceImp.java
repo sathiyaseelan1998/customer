@@ -86,4 +86,11 @@ public class CustomerServiceImp implements CustomerService {
 		return id;
 	}
 
+	@Override
+	public int customerDelete(int id) {
+		// TODO Auto-generated method stub
+		int custId=customerDao.customerDelete(id);
+		return custId;
+	}
+
 }

@@ -14,4 +14,6 @@ public interface CustomerDao {
 
 	int customerEdit(CustomerVo customerVo);
 
+	int customerDelete(int id);
+
 }
