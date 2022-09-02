@@ -42,7 +42,7 @@ public class CustomerController {
 		else {
 			model.addAttribute("msg", "customer details save not successfully");
 		}
-		return "customerRegister";
+		return "redirect:/customerView";
 		
 	}
 	
