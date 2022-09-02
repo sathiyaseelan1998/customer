@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <link rel="stylesheet" href="../css/mystyle.css" type="text/css"/>
@@ -10,7 +11,22 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-form label{
+html,body{
+		background:linear-gradient(#ffa17f,#00223e);
+		background-repeat: no-repeat;
+		height: 100%;
+
+}
+.container{
+	width: 300px;
+	border: 1px solid;
+		background:linear-gradient(gray,lightgray);
+		
+
+	background-size: cover;
+	
+}
+/* form label{
 
 display:block ;
 margin: 5px;
@@ -47,21 +63,28 @@ background-color: rgba(20,15,26,.5);
 
 text-align: center;
 }
-
-</style>
+ */
+</style> 
 </head>
 <body>
 
-<div class="cForm">
+<div class="container">
 <h3>CUSTOMER REGISTRATION</h3>
 
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
-<label>NAME</label><form:input path="name"/>
-<label>EMAIL</label><form:input path="email"/>
-<label>PASSWORD</label><form:password path="password"/>
-<label>ADDRESS</label><form:input path="address"/>
-<label>MOBILE</label><form:input path="mobile"/>
-<form:button value="register">Save</form:button>
+
+<div class="input"><label for="name">NAME</label><form:input path="name" id="name" name="name"/></div>
+
+<div class="input"><label for="email">EMAIL</label><form:input path="email" id="email"/></div>
+
+<div class="input"><label for="password">PASSWORD</label><form:password path="password" id="password"/></div>
+
+<div class="input"><label for="address">ADDRESS</label><form:input path="address" id="address"/></div>
+
+<div class="input"><label for="mobile">MOBILE</label><form:input path="mobile" id="mobile" maxlength="10"/></div>
+
+<div class="btn"><form:button value="register">Save</form:button></div>
+
 </form:form>
 </div>
 
