@@ -8,82 +8,94 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <link rel="stylesheet" href="../css/mystyle.css" type="text/css"/>
 
-<title>Insert title here</title>
-<style type="text/css">
+<title>customer</title>
+ <style type="text/css">
 
-html,body{
+body{
 		background:linear-gradient(#ffa17f,#00223e);
 		background-repeat: no-repeat;
-		height: 100%;
+		font-family: serif,sans-serif,fantasy;
+		
 
 }
 .container{
 	width: 300px;
-	border: 1px solid;
-		background:linear-gradient(gray,lightgray);
-		
-
-	background-size: cover;
+	border: none;
+	background-color:rgba(0,0,0,.3);
+	margin:100px auto ;
+	padding: 10px;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 5px 0px 5px 0px black;
+	
 	
 }
-/* form label{
+.container label{
 
-display:block ;
-margin: 5px;
-
+	display: block;
+}
+.box{
+	margin-bottom: 8px;
 
 }
-form input{
+.box input{
 
-font-size: 20px;
-font-weight: lighter;
+width: 100%;
+box-sizing: border-box;
+padding: 7px 10px;
+margin: 5px 0px;
 border-radius: 5px;
-width: 200px;
+border: none;
 
 }
-form button{
-display: block;
-margin: 10px;
-padding: 7px;
-width: 100px;
+.btn button{
 
-}
-.cForm{
-
-width: 300px;
-margin: 250px auto;
-padding:20px;
-background-color: rgba(20,15,26,.5);
-
-
-
-}
-
-.cForm h3{
-
+padding: 10px 0px;
 text-align: center;
+border: none;
+border-radius: 10px;
+width: 50%;
+background-color:black;
+color: white; 
+box-shadow: 3px 0px 5px 0px black;
+
 }
- */
-</style> 
+.btn{
+text-align: center;
+margin-top: 3px;
+}
+.container h3{
+text-align: center;
+color: black;
+text-shadow:0px 0px 3px white;
+margin-bottom: 0px;
+}
+hr{
+
+background-color: gray;
+opacity: .5;
+
+}
+</style>
 </head>
 <body>
 
 <div class="container">
-<h3>CUSTOMER REGISTRATION</h3>
+<h3>CUSTOMER REGISTRATION</h3><hr>
 
 <form:form action="customerRegister" modelAttribute="customerBo" method="post" >
 
-<div class="input"><label for="name">NAME</label><form:input path="name" id="name" name="name"/></div>
+<div class="box"><label for="name">NAME</label><form:input path="name" id="name" name="name"/></div>
 
-<div class="input"><label for="email">EMAIL</label><form:input path="email" id="email"/></div>
+<div class="box"><label for="email">EMAIL</label><form:input path="email" id="email"/></div>
 
-<div class="input"><label for="password">PASSWORD</label><form:password path="password" id="password"/></div>
+<div class="box"><label for="password">PASSWORD</label><form:password path="password" id="password"/></div>
 
-<div class="input"><label for="address">ADDRESS</label><form:input path="address" id="address"/></div>
+<div class="box"><label for="address">ADDRESS</label><form:input path="address" id="address"/></div>
 
-<div class="input"><label for="mobile">MOBILE</label><form:input path="mobile" id="mobile" maxlength="10"/></div>
+<div class="box"><label for="mobile">MOBILE</label><form:input path="mobile" id="mobile" maxlength="10"/></div>
 
-<div class="btn"><form:button value="register">Save</form:button></div>
+<div class="btn"><form:button value="register">save</form:button></div>
 
 </form:form>
 </div>

@@ -8,7 +8,12 @@
 
 <title>Insert title here</title>
 <style type="text/css">
-
+body,html{
+		background:linear-gradient(#ffa17f,#00223e);
+		background-repeat: no-repeat;
+		font-family: serif,sans-serif,fantasy;
+		height: 100%;
+}
 
 th{
 background-color: navy;
@@ -31,7 +36,7 @@ width: 100%;
 }
 
 tr:nth-child(even){
-background-color: lightgray;
+background-color:lightgray;
 
 
 }
