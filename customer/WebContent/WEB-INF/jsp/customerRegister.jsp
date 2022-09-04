@@ -10,7 +10,13 @@
 
 <title>customer</title>
  <style type="text/css">
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
 body{
 		background:linear-gradient(#ffa17f,#00223e);
 		background-repeat: no-repeat;
