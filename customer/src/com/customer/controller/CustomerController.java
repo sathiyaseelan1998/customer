@@ -90,7 +90,17 @@ public class CustomerController {
 		
 		int custId=customerService.customerDelete(id);
 		
+		if(custId>0) {
+			model.addAttribute("msg", "customer details deleted");
+
 			return "redirect:/customerView";
+			
+		}
+		else {
+			model.addAttribute("msg", "customer details does not deleted");
+			return "customerView";
+			
+		}	
 	
 	}
 }
