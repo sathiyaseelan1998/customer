@@ -4,32 +4,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>customer</title>
-
-<!-- <style type="text/css">
-
-h1{
-
-background-color: lime;
-text-align: center;
-padding: 20px;
-margin: 40px;
-
-}
-a{
-text-decoration: none;
-}
-a:hover{
-color: red;
-}
-
-</style> -->
-
 </head>
 <body>
 	<h1>CUSTOMER APPLICATIONS</h1>
 	
 	<a href="register">Register</a>
 		<a href="customerView">View</a>
+		<a href="login">Login</a>
 	
 </body>
 </html>
