@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -85,8 +86,8 @@ public class CustomerController {
 		}	
 	}
 	
-	@RequestMapping(value = "/delete",method = RequestMethod.GET)
-	public String customerDelete(@RequestParam("id")int id,Model model) {
+	@RequestMapping(value = "/delete/{custId}",method = RequestMethod.GET)
+	public String customerDelete(@PathVariable(value="custId")int id,Model model) {
 		
 		int custId=customerService.customerDelete(id);
 		
@@ -103,4 +104,21 @@ public class CustomerController {
 		}	
 	
 	}
+	
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String login(Model model){
+		
+		
+		model.addAttribute("customerBo", new CustomerBo());
+		
+		return "login";
+		
+	}
+	@RequestMapping(value="/customerLogin",method=RequestMethod.POST)
+	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,Model model){
+		//customerBo=customerService.customerLogin(email,password);
+		return "customerView";
+		
+	}
+	
 }
