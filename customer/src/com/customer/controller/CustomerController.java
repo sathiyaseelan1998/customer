@@ -3,6 +3,9 @@ package com.customer.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -115,9 +118,15 @@ public class CustomerController {
 		
 	}
 	@RequestMapping(value="/customerLogin",method=RequestMethod.POST)
-	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,Model model){
+	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,HttpServletRequest request,Model model){
 		
 		customerBo=customerService.customerLogin(email,password);
+		if(null!=customerBo){
+			
+			HttpSession session=request.getSession();
+			session.setAttribute("email", customerBo.getEmail());
+			session.setAttribute("password", customerBo.getPassword());
+		}
 		return "customerView";
 		
 	}
