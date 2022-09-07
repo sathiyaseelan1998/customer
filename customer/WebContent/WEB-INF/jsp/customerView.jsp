@@ -15,34 +15,41 @@
 	box-sizing: border-box;
 	font-family: 'Poppins',sans-serif;
 }
+body{
 
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+	background: linear-gradient(to left bottom, #304352,#d7d2cc);
+
+
+}
 th{
 background-color: navy;
 color: white;
 text-align: left;
+border-color: black;
 }
 table ,th ,td{
 
-border: 1px solid;
+border-bottom:none;
 border-collapse: collapse;
 padding:7px;
-
 
 }
 table{
 
 width: 100%;
 
-
 }
 
 tr:nth-child(even){
-background-color:lightgray;
+	background: linear-gradient(to right top, #304352,#d7d2cc);
 
 
 }
 tr:hover {
-	background-color: gray;
 	color: white;
 }
 .cap{
@@ -50,12 +57,25 @@ tr:hover {
 text-transform: capitalize;
 
 }
+.container{
 
+width: 900px;
+background-color: rgba(0,0,0,.2);
+box-sizing: border-box;
+padding: 10px;
+box-shadow: 3px 0px 5px 0px black;
+
+}
+i:HOVER {
+	
+	color: white;
+	cursor: pointer;
+}
 
 </style>
 </head>
 <body>
-
+<div class="container">
 <table>
 
 <tr>
@@ -81,7 +101,7 @@ text-transform: capitalize;
 <td class="cap">${l.address}</td>
 <td>${l.mobile}</td>
 <td><a href="edit?id=${l.id}"><i class="fa fa-edit" style="font-size:24px;"></i></a></td>
-<td><a href="delete?id=${l.id}"><i class="fa fa-trash-o" style="font-size:24px ;color:red;"></i></a></td>
+<td><a href="delete?id=${l.id}"><i class="fa fa-trash-o" style="font-size:24px ;"></i></a></td>
 			
 </tr>
 
@@ -90,6 +110,6 @@ text-transform: capitalize;
 
 
 </table>
-
+</div>
 </body>
 </html>

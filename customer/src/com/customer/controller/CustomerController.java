@@ -116,6 +116,8 @@ public class CustomerController {
 	}
 	@RequestMapping(value="/customerLogin",method=RequestMethod.POST)
 	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,Model model){
+		customerBo=null;
+		
 		//customerBo=customerService.customerLogin(email,password);
 		return "customerView";
 		
