@@ -93,4 +93,22 @@ public class CustomerServiceImp implements CustomerService {
 		return custId;
 	}
 
+	@Override
+	public CustomerBo customerLogin(String email, String password) {
+		// TODO Auto-generated method stub
+		
+		customerVo=customerDao.customerLogin(email,password);
+		if(null!=customerVo){
+			
+			customerBo.setId(customerVo.getId());
+			customerBo.setName(customerVo.getName());
+			customerBo.setEmail(customerVo.getEmail());
+			customerBo.setPassword(customerVo.getPassword());
+			customerBo.setAddress(customerVo.getAddress());
+			customerBo.setMobile(customerVo.getMobile());
+			
+		}
+		return customerBo;
+	}
+
 }

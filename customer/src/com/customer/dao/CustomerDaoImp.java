@@ -113,4 +113,21 @@ public class CustomerDaoImp implements CustomerDao {
 		return custId;
 	}
 
+	@Override
+	public CustomerVo customerLogin(String email, String password) {
+		
+		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			cr.add(Restrictions.eq("email", email));
+			cr.add(Restrictions.eq("password", password));
+			customerVo=(CustomerVo) cr.uniqueResult();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return customerVo;		
+	}
+
 }

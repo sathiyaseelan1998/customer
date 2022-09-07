@@ -16,4 +16,6 @@ public interface CustomerService {
 
 	int customerDelete(int id);
 
+	CustomerBo customerLogin(String email, String password);
+
 }

@@ -16,4 +16,6 @@ public interface CustomerDao {
 
 	int customerDelete(int id);
 
+	CustomerVo customerLogin(String email, String password);
+
 }
