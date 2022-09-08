@@ -121,12 +121,30 @@ public class CustomerController {
 	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,HttpServletRequest request,Model model){
 		
 		customerBo=customerService.customerLogin(email,password);
-		if(null!=customerBo){
+		if(null!=customerBo && customerBo.getId()>0){
 			
 			HttpSession session=request.getSession();
 			session.setAttribute("email", customerBo.getEmail());
 			session.setAttribute("password", customerBo.getPassword());
+			
+			model.addAttribute("msg", "login success");
+			return "home";
 		}
+		else{
+			
+			model.addAttribute("msg", "login invalid");
+
+		}
+	
+		return "login";
+	}
+	@RequestMapping(value="/profile",method=RequestMethod.GET)
+	public String profile(HttpServletRequest request,Model model){
+		
+		HttpSession session=request.getSession();
+		String email=(String) session.getAttribute("email");
+		String password=(String) session.getAttribute("password");
+		list=customerService.profile(email,password);
 		return "customerView";
 		
 	}

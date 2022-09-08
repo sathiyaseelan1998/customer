@@ -132,5 +132,6 @@ letter-spacing: 2px;
 
 </form:form>
 </div>
+${msg}
 </body>
 </html> 

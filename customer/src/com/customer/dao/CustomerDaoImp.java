@@ -19,6 +19,7 @@ public class CustomerDaoImp implements CustomerDao {
 	SessionFactory sf;
 	
 	CustomerVo customerVo=new CustomerVo();
+	List<CustomerVo> list=new ArrayList<CustomerVo>();
 	
 	@Override
 	public int customerRegister(CustomerVo customerVo) {
@@ -41,8 +42,8 @@ public class CustomerDaoImp implements CustomerDao {
 	public List<CustomerVo> customerView() {
 		// TODO Auto-generated method stub
 		
-		List<CustomerVo> list=new ArrayList<CustomerVo>();
-		
+		/*List<CustomerVo> list=new ArrayList<CustomerVo>();
+		*/
 		try {
 			
 			Session session=sf.getCurrentSession();
@@ -128,6 +129,35 @@ public class CustomerDaoImp implements CustomerDao {
 			System.out.println(e);
 		}
 		return customerVo;		
+	}
+
+	@Override
+	public List<CustomerVo> profile(String email, String password) {
+		// TODO Auto-generated method stub
+		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			
+			if(email.equals("dhoni@gmail.com")){
+				
+				list=cr.list();
+			}
+			else{
+			
+			cr.add(Restrictions.eq("email", email));
+			cr.add(Restrictions.eq("password", password));
+			
+			customerVo=(CustomerVo) cr.uniqueResult();
+			list.add(customerVo);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		
+		return list;
 	}
 
 }

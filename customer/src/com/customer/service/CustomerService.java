@@ -18,4 +18,6 @@ public interface CustomerService {
 
 	CustomerBo customerLogin(String email, String password);
 
+	List<CustomerBo> profile(String email, String password);
+
 }

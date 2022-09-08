@@ -18,4 +18,6 @@ public interface CustomerDao {
 
 	CustomerVo customerLogin(String email, String password);
 
+	List<CustomerVo> profile(String email, String password);
+
 }
