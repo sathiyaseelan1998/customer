@@ -145,6 +145,11 @@ public class CustomerController {
 		String email=(String) session.getAttribute("email");
 		String password=(String) session.getAttribute("password");
 		list=customerService.profile(email,password);
+		if(null!=list) {
+			
+			model.addAttribute("list", list);
+		}
+		
 		return "customerView";
 		
 	}
