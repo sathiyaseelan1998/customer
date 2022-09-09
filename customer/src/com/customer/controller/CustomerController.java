@@ -139,7 +139,7 @@ public class CustomerController {
 
 		}
 	
-		return "redirect:/login";
+		return "login";
 	}
 	@RequestMapping(value="/profile",method=RequestMethod.GET)
 	public String profile(HttpServletRequest request,Model model){
