@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Insert title here</title>
@@ -20,7 +21,9 @@ body{
 	width:100vw;
 	height:100vh;
  	background: rgb(63,94,251);
-	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); 	
+	/* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */ 
+		background: radial-gradient(circle, gray,black); 	
+		
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,6 +39,7 @@ border:none;
 border-radius:20px;
 position: relative;
 box-shadow: 5px 0px 5px 0px black;
+
 
 }
 .group label{
@@ -102,7 +106,17 @@ text-align:center;
 margin-top: 15px;
 letter-spacing: 2px;
 }
+.msg {
 
+position: absolute;
+left: 0px;
+top: 0px;
+background-color:rgba(255,0,0,.7);
+padding: 15px 10px;
+width: 100%;
+margin: 5px 10px;
+border-radius: 10px;
+}
 </style>
 </head>
 <body>
@@ -131,7 +145,13 @@ letter-spacing: 2px;
 </div>
 
 </form:form>
+
 </div>
-${msg}
+<c:if test="${!empty msg}">
+<div class="msg">
+<span>${msg}</span>
+
+</div>
+</c:if>
 </body>
 </html> 

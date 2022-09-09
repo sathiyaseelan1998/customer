@@ -43,9 +43,9 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public List<CustomerBo> customerView() {
 		// TODO Auto-generated method stub
-		/*List<CustomerBo> listBo=new ArrayList<CustomerBo>();
+		List<CustomerBo> listBo=new ArrayList<CustomerBo>();
 		List<CustomerVo> listVo=new ArrayList<CustomerVo>();
-	*/	
+	
 		listVo=customerDao.customerView();
 		
 		for(CustomerVo vo:listVo) {
@@ -119,6 +119,7 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public List<CustomerBo> profile(String email, String password) {
 		// TODO Auto-generated method stub
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
 		listVo=customerDao.profile(email,password);
 		for(CustomerVo vo:listVo){
 			

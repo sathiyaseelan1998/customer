@@ -26,8 +26,8 @@ public class CustomerController {
 	
 	
 	List<CustomerBo> list=new ArrayList<CustomerBo>();
-	CustomerBo customerBo=new CustomerBo();
-	
+/*	CustomerBo customerBo=new CustomerBo();
+*/	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model)
 	{
@@ -68,7 +68,8 @@ public class CustomerController {
 	}
 	@RequestMapping(value = "/edit",method = RequestMethod.GET)
 	public String edit(@RequestParam("id")int id,Model model) {
-		
+		CustomerBo customerBo=new CustomerBo();
+
 		customerBo=customerService.edit(id);
 		model.addAttribute("customerBo", customerBo);
 		
@@ -119,7 +120,7 @@ public class CustomerController {
 	}
 	@RequestMapping(value="/customerLogin",method=RequestMethod.POST)
 	public String customerLogin(@RequestParam("email") String email,@RequestParam("password") String password,HttpServletRequest request,Model model){
-		
+		CustomerBo customerBo=new CustomerBo();
 		customerBo=customerService.customerLogin(email,password);
 		if(null!=customerBo && customerBo.getId()>0){
 			
@@ -127,16 +128,18 @@ public class CustomerController {
 			session.setAttribute("email", customerBo.getEmail());
 			session.setAttribute("password", customerBo.getPassword());
 			
+			
+
 			model.addAttribute("msg", "login success");
 			return "home";
 		}
 		else{
-			
+			model.addAttribute("customerBo", new CustomerBo());
 			model.addAttribute("msg", "login invalid");
 
 		}
 	
-		return "login";
+		return "redirect:/login";
 	}
 	@RequestMapping(value="/profile",method=RequestMethod.GET)
 	public String profile(HttpServletRequest request,Model model){

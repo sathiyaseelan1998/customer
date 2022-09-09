@@ -19,7 +19,6 @@ public class CustomerDaoImp implements CustomerDao {
 	SessionFactory sf;
 	
 	CustomerVo customerVo=new CustomerVo();
-	List<CustomerVo> list=new ArrayList<CustomerVo>();
 	
 	@Override
 	public int customerRegister(CustomerVo customerVo) {
@@ -42,8 +41,8 @@ public class CustomerDaoImp implements CustomerDao {
 	public List<CustomerVo> customerView() {
 		// TODO Auto-generated method stub
 		
-		/*List<CustomerVo> list=new ArrayList<CustomerVo>();
-		*/
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
+		
 		try {
 			
 			Session session=sf.getCurrentSession();
@@ -134,6 +133,7 @@ public class CustomerDaoImp implements CustomerDao {
 	@Override
 	public List<CustomerVo> profile(String email, String password) {
 		// TODO Auto-generated method stub
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
 		try {
 			
 			Session session=sf.getCurrentSession();
