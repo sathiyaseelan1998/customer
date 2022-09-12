@@ -112,12 +112,25 @@ position: absolute;
 left: 0px;
 top: 0px;
 background-color:rgba(255,0,0,.7);
+background-color:tomato;
 padding: 15px 10px;
 width: 100%;
 margin: 5px 10px;
 border-radius: 10px;
 }
 </style>
+
+<script type="text/javascript">
+
+
+
+
+
+
+</script>
+
+
+
 </head>
 <body>
 <div class="container">

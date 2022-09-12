@@ -15,16 +15,7 @@
 	box-sizing: border-box;
 	font-family: 'Poppins',sans-serif;
 }
-body{
 
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-	background: linear-gradient(to left bottom, #304352,#d7d2cc);
-
-
-}
 th{
 background-color: navy;
 color: white;
@@ -33,7 +24,6 @@ border-color: black;
 }
 table ,th ,td{
 
-border-bottom:none;
 border-collapse: collapse;
 padding:7px;
 
@@ -45,7 +35,7 @@ width: 100%;
 }
 
 tr:nth-child(even){
-	background: linear-gradient(to right top, #304352,#d7d2cc);
+	background: gray;
 
 
 }
@@ -57,14 +47,14 @@ tr:hover {
 text-transform: capitalize;
 
 }
-.container{
+/* .container{
 
 width: 900px;
 background-color: rgba(0,0,0,.2);
 box-sizing: border-box;
 padding: 10px;
 box-shadow: 3px 0px 5px 0px black;
-
+ */
 }
 i:HOVER {
 	

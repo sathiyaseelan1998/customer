@@ -32,7 +32,7 @@ body{
 
 	border: none;
 	border-radius:10px;
-	width: 500px;
+	width: 700px;
 	background-color: rgba(0,0,0,.3);
 	box-sizing: border-box;
 	box-shadow: 3px 0px 5px 0px black;
@@ -53,12 +53,13 @@ display: block;
 }
 .box input{
 	
-	height: 30px;
+	height: 35px;
 	width: 100%;
 	padding: 5px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
 	border-bottom-width:2px;
+	outline:none;
 	margin: 3px 0px;
 }
 
@@ -76,7 +77,7 @@ display: block;
 }
 button{
 
-	height: 30px;
+	height: 35px;
 	width: 100%;
 	border: none;
 	border-radius: 5px;

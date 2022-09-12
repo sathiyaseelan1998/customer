@@ -25,8 +25,8 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	
-	List<CustomerBo> list=new ArrayList<CustomerBo>();
-/*	CustomerBo customerBo=new CustomerBo();
+/*	List<CustomerBo> list=new ArrayList<CustomerBo>();
+*//*	CustomerBo customerBo=new CustomerBo();
 */	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model)
@@ -53,7 +53,8 @@ public class CustomerController {
 	@RequestMapping(value="/customerView",method=RequestMethod.GET)
 	public String customerView(Model model) {
 		
-		
+		List<CustomerBo> list=new ArrayList<CustomerBo>();
+
 		
 		list=customerService.customerView();
 		if(null!=list) {
@@ -143,7 +144,8 @@ public class CustomerController {
 	}
 	@RequestMapping(value="/profile",method=RequestMethod.GET)
 	public String profile(HttpServletRequest request,Model model){
-		
+		List<CustomerBo> list=new ArrayList<CustomerBo>();
+
 		HttpSession session=request.getSession();
 		String email=(String) session.getAttribute("email");
 		String password=(String) session.getAttribute("password");

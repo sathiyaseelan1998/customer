@@ -5,9 +5,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+
+<style type="text/css">
+
+.msg{
+
+background-color: lightgreen;
+padding:15px 10px;
+margin: 5px 10px;
+width: 100%;
+border-radius: 10px;
+
+}
+
+
+</style>
+
 </head>
 <body>
-<a href="profile">Profile</a>
+<div class="msg">
 ${msg}
+</div>
+<a href="profile">Profile</a>
+<c:if test="${!empty msg}">
+
+</c:if>
 </body>
 </html>
