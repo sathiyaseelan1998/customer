@@ -118,13 +118,67 @@ width: 100%;
 margin: 5px 10px;
 border-radius: 10px;
 }
+.group.success input{
+
+border-color: green;
+}
+.group.error input{
+border-color: red;
+
+}
 </style>
 
-<script type="text/javascript">
+   <script type="text/javascript">
+/* const form=document.getElementById("form");
+const email=document.getElementById("email");
+const password=document.getElementById("password");
+ */
+
+/* form.addEventListener("submit",e=>{
+    
+    
+    e.preventDefault();
+    checkInput();
+
+}); */
+
+function checkInput(){
+
+    console.log("hi....");
+
+	const form=document.getElementById("form");
+	const email=document.getElementById("email");
+	const password=document.getElementById("password");
+
+    const emailId=email.value;
+    const pass=password.value;
+    console.log(emailId);
+
+    if(name===""){
+
+        setError(name,"name can't be blank")
+    }
+    else{
+
+        setSuccess(name);
+    }
+
+}
+function setError(input,message){
+
+    const forms=input.parentElement;
+    const error=forms.querySelector("errors");
+    forms.className="group error";
+    error.innerText=message;
+}
+
+function setSuccess(input){
+
+    const forms=input.parentElement;
+    forms.className="group success";
 
 
-
-
+}
 
 
 </script>
@@ -141,20 +195,22 @@ border-radius: 10px;
 
 <h3>LOGIN</h3>
 
-<form:form action="customerLogin" modelAttribute="customerBo" method="post">
+<form:form action="customerLogin" modelAttribute="customerBo" method="post" id="form">
 
 <div class="group">
 <label for="email">Email</label>
 <form:input path="email" id="email"/>
+<form:errors></form:errors>
 </div>
 
 <div class="group">
 <label for="password">Password</label>
 <form:password path="password" id="password"/>
+<form:errors></form:errors>
 </div>
 
 <div class="btn">
-<form:button>Login</form:button>
+<form:button type="submit" onclick="checkInput()">Login</form:button>
 </div>
 
 </form:form>

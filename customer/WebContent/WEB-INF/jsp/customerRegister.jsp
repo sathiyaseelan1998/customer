@@ -25,7 +25,7 @@ body{
 
 }
 .container{
-	width: 300px;
+	width: 400px;
 	border: none;
 	background-color:rgba(0,0,0,.3);
 	margin:100px auto ;

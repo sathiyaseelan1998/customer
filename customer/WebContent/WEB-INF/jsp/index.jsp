@@ -4,13 +4,114 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>customer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+body{
+
+background:linear-gradient(#ffa17f,#00223e);
+height: 100vh;
+background-repeat: no-repeat;
+
+}
+.menu{
+
+width: 100%;
+background-color: #2F4F4F;
+padding: 10px;
+
+}
+
+ul{
+
+display: flex;
+justify-content: space-between;
+
+}
+
+ul li{
+
+list-style: none;
+color:white;
+margin: 3px;
+}
+
+ul li a{
+
+text-decoration: none;
+position: relative;
+color: white;
+}
+
+ul li a::BEFORE {
+	
+	content: "";
+	width:0%;
+	height:2px;
+	background-color: orange;
+	position: absolute;
+	bottom: -2px;
+	transition:all 0.5s ease;
+
+}
+ul li a:HOVER::BEFORE {
+
+width: 100%;
+
+	
+}
+.menu ul li i{
+
+font-size: 25px;
+}
+.container{
+height:500px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.title{
+
+font-size: 30px;
+color: white;
+
+
+}
+h1:HOVER{
+text-shadow:0px 0px 10px black;
+
+}
+
+</style>
+
 </head>
 <body>
-	<h1>CUSTOMER APPLICATIONS</h1>
+
+	<div class="menu">
 	
-	<a href="register">Register</a>
-		<a href="customerView">View</a>
-		<a href="login">Login</a>
+	<ul>
+		<li><i class="material-icons">computer</i></li>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="register">Register</a></li>
+		<li><a href="customerView">View</a></li>
+		<li><a href="login">Login</a></li>
+	
+	</ul>
+	</div>
+	<div class="container">
+	<div class="title">
+	<h1>CUSTOMER APPLICATIONS</h1>
+	</div>
+</div>
 	
 </body>
 </html>
