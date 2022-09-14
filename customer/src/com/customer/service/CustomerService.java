@@ -20,4 +20,6 @@ public interface CustomerService {
 
 	List<CustomerBo> profile(String email, String password);
 
+	List<CustomerBo> search(String name, String email);
+
 }

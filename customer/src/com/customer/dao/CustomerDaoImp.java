@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -157,6 +158,26 @@ public class CustomerDaoImp implements CustomerDao {
 			System.out.println(e);
 		}
 		
+		return list;
+	}
+
+	@Override
+	public List<CustomerVo> search(String name, String email) {
+		// TODO Auto-generated method stub
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
+		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			
+			cr.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
+			cr.add(Restrictions.ilike("email", email, MatchMode.ANYWHERE));
+			list=cr.list();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
 		return list;
 	}
 

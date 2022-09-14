@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,17 +38,26 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "customerRegister",method = RequestMethod.POST)
-	public String customerRegister(@ModelAttribute("customerBo") CustomerBo customerBo,Model model )
+	public String customerRegister(@Valid @ModelAttribute("customerBo") CustomerBo customerBo,Model model,BindingResult br )
 	{
+		
+		if(br.hasErrors()){
+			return "customerRegister";
+		}
 		
 		int count=customerService.customerRegister(customerBo);
 		if(count>0) {
 			model.addAttribute("msg", "customer details save successfully");
+			model.addAttribute("customerBo",new CustomerBo());
+
 		}
 		else {
 			model.addAttribute("msg", "customer details save not successfully");
+			model.addAttribute("customerBo",new CustomerBo());
+			return "customerRegister";
+
 		}
-		return "redirect:/customerView";
+		return "login";
 		
 	}
 	
@@ -60,6 +71,8 @@ public class CustomerController {
 		if(null!=list) {
 			
 			model.addAttribute("list", list);
+			model.addAttribute("customerBo",new CustomerBo());
+
 		}
 		
 		
@@ -83,7 +96,7 @@ public class CustomerController {
 		int id=customerService.customerEdit(customerBo);
 		if(id>0) {
 			
-			return "redirect:/customerView";
+			return "home";
 		}
 		else {
 			return "customerEdit";
@@ -98,6 +111,7 @@ public class CustomerController {
 		
 		if(custId>0) {
 			model.addAttribute("msg", "customer details deleted");
+			model.addAttribute("customerBo", new CustomerBo());
 
 			return "redirect:/customerView";
 			
@@ -153,10 +167,27 @@ public class CustomerController {
 		if(null!=list) {
 			
 			model.addAttribute("list", list);
+			model.addAttribute("customerBo", new CustomerBo());
+
 		}
 		
 		return "customerView";
 		
+	}
+	
+	@RequestMapping(value="/search",method=RequestMethod.POST)
+	public String search(@RequestParam("name")String name,@RequestParam("email")String email,Model model){
+		
+		List<CustomerBo> list=new ArrayList<CustomerBo>();
+
+		list=customerService.search(name,email);
+		if(null!=list){
+			
+			model.addAttribute("list", list);
+			model.addAttribute("customerBo", new CustomerBo());
+		}
+		return "customerView";
+
 	}
 	
 }

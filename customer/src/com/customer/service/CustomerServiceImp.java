@@ -120,7 +120,7 @@ public class CustomerServiceImp implements CustomerService {
 	public List<CustomerBo> profile(String email, String password) {
 		// TODO Auto-generated method stub
 		List<CustomerVo> list=new ArrayList<CustomerVo>();
-		listVo=customerDao.profile(email,password);
+		list=customerDao.profile(email,password);
 		for(CustomerVo vo:listVo){
 			
 			CustomerBo bo=new CustomerBo();
@@ -132,6 +132,28 @@ public class CustomerServiceImp implements CustomerService {
 			bo.setAddress(vo.getAddress());
 			bo.setMobile(vo.getMobile());
 			listBo.add(bo);
+		}
+		return listBo;
+	}
+
+	@Override
+	public List<CustomerBo> search(String name, String email) {
+		// TODO Auto-generated method stub
+		List<CustomerVo> list=new ArrayList<CustomerVo>();
+		List<CustomerBo> listBo=new ArrayList<CustomerBo>();
+
+		list=customerDao.search(name,email);
+		for(CustomerVo vo:list){
+			
+			CustomerBo bo=new CustomerBo();
+			bo.setId(vo.getId());
+			bo.setName(vo.getName());
+			bo.setEmail(vo.getEmail());
+			bo.setPassword(vo.getPassword());
+			bo.setAddress(vo.getAddress());
+			bo.setMobile(vo.getMobile());
+			listBo.add(bo);
+			
 		}
 		return listBo;
 	}

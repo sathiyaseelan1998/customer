@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 
 <title>Insert title here</title>
 <style type="text/css">
@@ -33,14 +34,20 @@ table{
 width: 100%;
 
 }
+tr{
 
-tr:nth-child(even){
-	background: gray;
-
+transition:all 0.5s ease;
 
 }
+
+tr:nth-child(even){
+	background: olive;
+}
 tr:hover {
-	color: white;
+	color: lime;
+}
+tr:HOVER:nth-child(odd){
+	color: teal;
 }
 .cap{
 
@@ -64,7 +71,19 @@ i:HOVER {
 
 </style>
 </head>
+<jsp:include page="menu.jsp"></jsp:include>
 <body>
+
+<form:form action="search" modelAttribute="customerBo" method="post">
+
+name<form:input path="name"/>
+email<form:input path="email"/>
+<form:button>Search</form:button>
+
+
+</form:form>
+
+
 <div class="container">
 <table>
 
@@ -74,8 +93,8 @@ i:HOVER {
 <th>NAME</th>
 <th>EMAIL</th>
 <th>PASSWORD</th>
-<th>MOBILE</th>
 <th>ADDRESS</th>
+<th>MOBILE</th>
 <th>EDIT</th>
 <th>DELETE</th>
 

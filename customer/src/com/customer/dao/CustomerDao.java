@@ -20,4 +20,6 @@ public interface CustomerDao {
 
 	List<CustomerVo> profile(String email, String password);
 
+	List<CustomerVo> search(String name, String email);
+
 }
