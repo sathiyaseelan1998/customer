@@ -80,6 +80,9 @@ hr{
 
 background-color: gray;
 opacity: .5;
+}
+.box .error{
+color: red;
 
 }
 </style>
@@ -93,28 +96,39 @@ opacity: .5;
 
 <div class="box">
 	<label for="name">NAME</label><form:input path="name" id="name" name="name"/>
-	<form:errors path="name"></form:errors>
-</div>
+<div class="error">
+		<form:errors path="name"></form:errors>
+	</div></div>
 
 <div class="box">
 	<label for="email">EMAIL</label><form:input path="email" id="email"/>
-	<form:errors path="email"></form:errors>
+	<div class="error">
+		<form:errors path="email"></form:errors>
+	</div>
 </div>
 
 <div class="box">
 	<label for="password">PASSWORD</label><form:password path="password" id="password"/>
-	<form:errors path="password"></form:errors>	
+<div class="error">
+		<form:errors path="password"></form:errors>
+	</div>
+	
 </div>
 
 <div class="box">
 	<label for="address">ADDRESS</label><form:input path="address" id="address"/>
-	<form:errors path="address"></form:errors>
+<div class="error">
+		<form:errors path="address"></form:errors>
+	</div>
 </div>
 
 <div class="box">
 	<label for="mobile">MOBILE</label><form:input path="mobile" id="mobile" maxlength="10"/>
-	<form:errors path="mobile"></form:errors>
-</div>
+<div class="error">
+		<form:errors path="mobile"></form:errors>
+	</div>
+	
+	</div>
 
 <div class="btn"><form:button value="register">save</form:button></div>
 

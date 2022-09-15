@@ -21,10 +21,10 @@ public class CustomerServiceImp implements CustomerService {
 	
 	CustomerVo customerVo=new CustomerVo();
 	CustomerBo customerBo=new CustomerBo();
-	
+	/*
 	List<CustomerBo> listBo=new ArrayList<CustomerBo>();
 	List<CustomerVo> listVo=new ArrayList<CustomerVo>();
-
+*/
 	@Override
 	public int customerRegister(CustomerBo customerBo) {
 		// TODO Auto-generated method stub
@@ -119,9 +119,10 @@ public class CustomerServiceImp implements CustomerService {
 	@Override
 	public List<CustomerBo> profile(String email, String password) {
 		// TODO Auto-generated method stub
+		List<CustomerBo> listBo=new ArrayList<CustomerBo>();
 		List<CustomerVo> list=new ArrayList<CustomerVo>();
 		list=customerDao.profile(email,password);
-		for(CustomerVo vo:listVo){
+		for(CustomerVo vo:list){
 			
 			CustomerBo bo=new CustomerBo();
 

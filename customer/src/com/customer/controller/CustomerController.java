@@ -38,7 +38,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "customerRegister",method = RequestMethod.POST)
-	public String customerRegister(@Valid @ModelAttribute("customerBo") CustomerBo customerBo,Model model,BindingResult br )
+	public String customerRegister(@Valid @ModelAttribute("customerBo")CustomerBo customerBo, BindingResult br,Model model) 
 	{
 		
 		if(br.hasErrors()){
@@ -165,9 +165,8 @@ public class CustomerController {
 		String password=(String) session.getAttribute("password");
 		list=customerService.profile(email,password);
 		if(null!=list) {
-			
-			model.addAttribute("list", list);
 			model.addAttribute("customerBo", new CustomerBo());
+			model.addAttribute("list", list);
 
 		}
 		

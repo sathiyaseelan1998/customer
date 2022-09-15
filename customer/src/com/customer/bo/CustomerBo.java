@@ -13,23 +13,24 @@ public class CustomerBo {
 	private int id;
 	@NotEmpty
 	@Pattern(regexp = "^[a-zA-Z\\s]*$", message = "Name Should be a Character")
+	@Size(min = 3, max = 20)
 	private String name;
 	
 	@NotEmpty
-	@Pattern(regexp=".+@.+\\.[a-z]+",message="Invalid Email")
+	@Pattern(regexp = ".+@.+\\.[a-z]+", message = "Invalid Email Format")
 	@Email
 	private String email;
 	
 	@NotEmpty
-	@Size(min=4,max=8,message="Password Size Must be 4 to 8")
+	@Size(min = 4, max = 8,message = "Password Size Must be 4 to 8")
 	private String password;
 	
-	@NotEmpty
 	@NotNull
+	@NotEmpty
 	private String address;
-	@NotEmpty
+	
 	@NotNull
-	@Range(min=1111111111,message="Mobile Number must be 10 digits ")
+	@Range(min = 1111111111,message = "Mobile Number must be a 10 Digits")
 	private long mobile;
 
 	public int getId() {
