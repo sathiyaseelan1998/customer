@@ -22,4 +22,6 @@ public interface CustomerDao {
 
 	List<CustomerVo> search(String name, String email);
 
+	boolean findEmail(String email);
+
 }

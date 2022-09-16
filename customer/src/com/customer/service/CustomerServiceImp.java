@@ -159,4 +159,12 @@ public class CustomerServiceImp implements CustomerService {
 		return listBo;
 	}
 
+	@Override
+	public boolean findEmail(String email) {
+		// TODO Auto-generated method stub
+		boolean check=false;
+		check=customerDao.findEmail(email);
+		return check;
+	}
+
 }

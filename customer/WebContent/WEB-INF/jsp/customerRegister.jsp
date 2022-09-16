@@ -135,6 +135,6 @@ color: red;
 </form:form>
 </div>
 
-<span>${msg}</span>
+<span style="color: white;position: relative;left: 45%;">${msg}</span>
 </body>
 </html>

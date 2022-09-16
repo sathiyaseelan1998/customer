@@ -22,4 +22,6 @@ public interface CustomerService {
 
 	List<CustomerBo> search(String name, String email);
 
+	boolean findEmail(String email);
+
 }

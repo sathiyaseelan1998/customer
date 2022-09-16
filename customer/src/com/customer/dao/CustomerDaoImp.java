@@ -181,4 +181,27 @@ public class CustomerDaoImp implements CustomerDao {
 		return list;
 	}
 
+	@Override
+	public boolean findEmail(String email) {
+		// TODO Auto-generated method stub
+		CustomerVo vo=new CustomerVo();
+		boolean check=false;
+		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			cr.add(Restrictions.eq("email", email));
+			vo=(CustomerVo) cr.uniqueResult();
+			if(null!=vo){
+				
+				check=true;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return check;
+	}
+
 }

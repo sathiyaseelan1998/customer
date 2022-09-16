@@ -44,12 +44,17 @@ public class CustomerController {
 		if(br.hasErrors()){
 			return "customerRegister";
 		}
-		
+		if(customerService.findEmail(customerBo.getEmail())){
+			//br.rejectValue("email", "email already exists");
+			model.addAttribute("msg", "email already exists");
+
+			return "customerRegister";
+		}
 		int count=customerService.customerRegister(customerBo);
 		if(count>0) {
 			model.addAttribute("msg", "customer details save successfully");
 			model.addAttribute("customerBo",new CustomerBo());
-
+			return "login";
 		}
 		else {
 			model.addAttribute("msg", "customer details save not successfully");
@@ -57,7 +62,6 @@ public class CustomerController {
 			return "customerRegister";
 
 		}
-		return "login";
 		
 	}
 	
@@ -104,25 +108,25 @@ public class CustomerController {
 		}	
 	}
 	
-	@RequestMapping(value = "/delete/{custId}",method = RequestMethod.GET)
-	public String customerDelete(@PathVariable(value="custId")int id,Model model) {
-		
-		int custId=customerService.customerDelete(id);
-		
-		if(custId>0) {
-			model.addAttribute("msg", "customer details deleted");
-			model.addAttribute("customerBo", new CustomerBo());
-
-			return "redirect:/customerView";
-			
-		}
-		else {
-			model.addAttribute("msg", "customer details does not deleted");
-			return "customerView";
-			
-		}	
-	
-	}
+//	@RequestMapping(value = "/delete/{id}",method = RequestMethod.GET)
+//	public String customerDelete(@PathVariable(value="id")int id,Model model) {
+//		
+//		int custId=customerService.customerDelete(id);
+//		
+//		if(custId>0) {
+//			model.addAttribute("msg", "customer details deleted");
+//			model.addAttribute("customerBo", new CustomerBo());
+//
+//			return "redirect:/customerView";
+//			
+//		}
+//		else {
+//			model.addAttribute("msg", "customer details does not deleted");
+//			return "customerView";
+//			
+//		}	
+//	
+//	}
 	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login(Model model){
@@ -187,6 +191,26 @@ public class CustomerController {
 		}
 		return "customerView";
 
+	}
+	
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public String customerDelete(@PathVariable("id")int id,Model model) {
+		
+		int custId=customerService.customerDelete(id);
+		
+		if(custId>0) {
+			model.addAttribute("msg", "customer details deleted");
+			model.addAttribute("customerBo", new CustomerBo());
+
+			return "redirect:/customerView";
+			
+		}
+		else {
+			model.addAttribute("msg", "customer details does not deleted");
+			return "customerView";
+			
+		}	
+	
 	}
 	
 }
