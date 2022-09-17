@@ -167,4 +167,12 @@ public class CustomerServiceImp implements CustomerService {
 		return check;
 	}
 
+	@Override
+	public boolean findMobile(long mobile) {
+		// TODO Auto-generated method stub
+		boolean check=false;
+		check=customerDao.findMobile(mobile);
+		return check;
+	}
+
 }

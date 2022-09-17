@@ -50,6 +50,11 @@ public class CustomerController {
 
 			return "customerRegister";
 		}
+		if(customerService.findMobile(customerBo.getMobile())){
+			
+			model.addAttribute("msg", "mobile number already exists");
+			return "customerRegister";
+		}
 		int count=customerService.customerRegister(customerBo);
 		if(count>0) {
 			model.addAttribute("msg", "customer details save successfully");
@@ -100,7 +105,7 @@ public class CustomerController {
 		int id=customerService.customerEdit(customerBo);
 		if(id>0) {
 			
-			return "home";
+			return "redirect:/profile";
 		}
 		else {
 			return "customerEdit";
@@ -194,7 +199,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/delete",method = RequestMethod.GET)
-	public String customerDelete(@PathVariable("id")int id,Model model) {
+	public String customerDelete(@RequestParam("id")int id,Model model) {
 		
 		int custId=customerService.customerDelete(id);
 		

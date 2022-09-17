@@ -204,4 +204,26 @@ public class CustomerDaoImp implements CustomerDao {
 		return check;
 	}
 
+	@Override
+	public boolean findMobile(long mobile) {
+		// TODO Auto-generated method stub
+		CustomerVo vo=new CustomerVo();
+		boolean check=false;
+		try {
+			
+			Session session=sf.getCurrentSession();
+			Criteria cr=session.createCriteria(CustomerVo.class);
+			cr.add(Restrictions.eq("mobile", mobile));
+			vo=(CustomerVo) cr.uniqueResult();
+			if(null!=vo){
+				
+				check=true;
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return check;
+	}
+
 }

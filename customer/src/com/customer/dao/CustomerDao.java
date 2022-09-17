@@ -24,4 +24,6 @@ public interface CustomerDao {
 
 	boolean findEmail(String email);
 
+	boolean findMobile(long mobile);
+
 }

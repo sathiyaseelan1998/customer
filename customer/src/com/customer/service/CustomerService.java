@@ -24,4 +24,6 @@ public interface CustomerService {
 
 	boolean findEmail(String email);
 
+	boolean findMobile(long mobile);
+
 }
