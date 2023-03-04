@@ -23,8 +23,8 @@ public class CustomerServiceImp implements CustomerService {
 	CustomerBo customerBo=new CustomerBo();
 	/*
 	List<CustomerBo> listBo=new ArrayList<CustomerBo>();
-	List<CustomerVo> listVo=new ArrayList<CustomerVo>();
-*/
+	List<CustomerVo> listVo=new ArrayList<CustomerVo>();*/
+	
 	@Override
 	public int customerRegister(CustomerBo customerBo) {
 		// TODO Auto-generated method stub
