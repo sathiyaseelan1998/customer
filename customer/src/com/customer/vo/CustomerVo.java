@@ -1,25 +1,35 @@
 
   package com.customer.vo;
   
-  import javax.persistence.Column; import javax.persistence.Entity; import
-  javax.persistence.GeneratedValue; import javax.persistence.Id; import
-  javax.persistence.Table;
+  import javax.persistence.Column; 
+  import javax.persistence.Entity; 
+  import javax.persistence.GeneratedValue; 
+  import javax.persistence.Id; 
+  import javax.persistence.Table;
   
   @Entity
   
-  @Table(name="customer") public class CustomerVo {
+  @Table(name="customer")
+  public class CustomerVo {
   
   @Id
-  
   @GeneratedValue
-  
-  @Column(name="id") private int id;
+  @Column(name="id") 
+  private int id;
   
   @Column(name="name")
   private String name; 
+  
+  @Column(name="email")
   private String email; 
+  
+  @Column(name="password")
   private String password;
+  
+  @Column(name="address")
   private String address; 
+  
+  @Column(name="mobile")
   private long mobile;
   
 public int getId() {
